@@ -1,9 +1,10 @@
 sap.ui.define([
 		'sap/ui/core/mvc/Controller',
 		'sap/ui/model/json/JSONModel',
-		'sap/m/MessageToast'
+		'sap/m/MessageToast',
+		'sap/ui/core/Fragment'
 	],
-	function (Controller, JSONModel, MessageToast) {
+	function (Controller, JSONModel, MessageToast, Fragment) {
 		"use strict";
 
 		return Controller.extend("com.pae.pm.ZAGENDAPOZOS.controller.Home", {
@@ -12,137 +13,373 @@ sap.ui.define([
 				// create model
 				var oModel = new JSONModel();
 				oModel.setData({
-					startDate: new Date("2019", "11", "04", "8", "0"),
+					startDate: new Date("2017", "10", "13", "8", "0"),
 					people: [
 						{
+							pic: "test-resources/sap/ui/documentation/sdk/images/John_Miller.png",
 							name: "Bahamonde Dario",
+							role: "CUADRILLA1",
 							appointments: [
 								{
-									start: new Date("2019", "11", "04", "08", "00"),
-									end: new Date("2019", "11", "04", "09", "10"),
+									start: new Date("2017", "10", "17", "00", "00"),
+									end: new Date("2017", "10", "17", "24", "00"),
 									title: "PO-1143",
-									info: "RUT-BES-POZO PO-1143",
 									type: "Type07",
-									pic: "sap-icon://it-instance"
+									pic: "sap-icon://it-host"
 								},
 								{
-									start: new Date("2019", "11", "04", "09", "00"),
-									end: new Date("2019", "11", "04", "10", "20"),
+									start: new Date("2017", "10", "17", "00", "00"),
+									end: new Date("2017", "10", "17", "24", "00"),
 									title: "PO-1145",
-									info: "RUT-BES-POZO PO-1145",
-									type: "Type01",
-									pic: "sap-icon://it-instance"
+									type: "Type07",
+									pic: "sap-icon://it-host"
 								},
 								{
-									start: new Date("2019", "11", "04", "10", "00"),
-									end: new Date("2019", "11", "04", "11", "30"),
-									title: "Sync Bill",
-									info: "Online",
-									type: "Type01",
-									pic: "sap-icon://it-instance"
+									start: new Date("2017", "10", "21", "00", "00"),
+									end: new Date("2017", "10", "21", "24", "00"),
+									title: "PO-1146",
+									type: "Type07",
+									pic: "sap-icon://it-host"
 								},
 								{
-									start: new Date("2019", "11", "04", "11", "00"),
-									end: new Date("2019", "11", "04", "12", "40"),
-									title: "Check Flights",
-									info: "no room",
-									type: "Type09",
-									pic: "sap-icon://it-instance"
+									start: new Date("2017", "10", "21", "00", "00"),
+									end: new Date("2017", "10", "21", "24", "00"),
+									title: "PO-1147",
+									type: "Type07",
+									pic: "sap-icon://it-host"
 								},
 								{
-									start: new Date("2019", "11", "04", "12", "00"),
-									end: new Date("2019", "11", "04", "13", "50"),
-									title: "Lunch",
-									info: "canteen",
-									type: "Type05",
-									pic: "sap-icon://it-instance"
+									start: new Date("2017", "10", "21", "00", "00"),
+									end: new Date("2017", "10", "21", "24", "00"),
+									title: "PO-1128",
+									type: "Type07",
+									pic: "sap-icon://it-host"
 								},
 								{
-									start: new Date("2019", "11", "04", "13", "00"),
-									end: new Date("2019", "11", "04", "15", "10"),
-									title: "Discussion of the plan",
-									info: "Online meeting",
-									type: "Type01",
-									pic: "sap-icon://it-instance"
+									start: new Date("2017", "10", "21", "00", "00"),
+									end: new Date("2017", "10", "21", "24", "00"),
+									title: "PO-1129",
+									type: "Type07",
+									pic: "sap-icon://it-host"
 								},
 								{
-									start: new Date("2019", "11", "04", "14", "00"),
-									end: new Date("2019", "11", "04", "15", "30"),
-									title: "Deadline",
-									type: "Type01",
-									pic: "sap-icon://it-instance"
+									start: new Date("2017", "10", "23", "00", "00"),
+									end: new Date("2017", "10", "23", "24", "00"),
+									title: "PO-1130",
+									type: "Type07",
+									pic: "sap-icon://it-host"
 								},
 								{
-									start: new Date("2019", "11", "04", "15", "00"),
-									end: new Date("2019", "11", "04", "16", "00"),
-									title: "Blocker",
-									info: "room 6",
-									type: "Type01",
-									pic: "sap-icon://it-instance"
+									start: new Date("2017", "10", "23", "00", "00"),
+									end: new Date("2017", "10", "23", "24", "00"),
+									title: "PO-1119",
+									type: "Type07",
+									pic: "sap-icon://it-host"
 								},
 								{
-									start: new Date("2019", "11", "04", "16", "00"),
-									end: new Date("2019", "11", "04", "17", "60"),
-									title: "Boss Birthday",
-									type: "Type01",
-									pic: "sap-icon://it-instance"
+									start: new Date("2017", "10", "25", "00", "00"),
+									end: new Date("2017", "10", "25", "24", "00"),
+									title: "PO-1086",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "25", "00", "00"),
+									end: new Date("2017", "10", "25", "24", "00"),
+									title: "PO-1083",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "25", "00", "00"),
+									end: new Date("2017", "10", "25", "24", "00"),
+									title: "PO-1114",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "25", "00", "00"),
+									end: new Date("2017", "10", "25", "24", "00"),
+									title: "PO-1132",
+									type: "Type07",
+									pic: "sap-icon://it-host"
 								}
 							]
 						},
 						{
-							name: "Donna Moore",
-							role: "team member",
+							pic: "test-resources/sap/ui/documentation/sdk/images/Donna_Moore.jpg",
+							name: "Blackie Maria",
+							role: "CUADRILLA2",
 							appointments: [
 								{
-									start: new Date("2017", "10", "13", "08", "00"),
-									end: new Date("2017", "10", "13", "09", "26"),
-									title: "Team sync",
-									info: "Canteen",
+									start: new Date("2017", "10", "13", "00", "00"),
+									end: new Date("2017", "10", "13", "24", "00"),
+									title: "PO-1195",
 									type: "Type07",
-									pic: "sap-icon://family-care"
+									pic: "sap-icon://it-host"
 								},
 								{
-									start: new Date("2017", "10", "13", "10", "00"),
-									end: new Date("2017", "10", "13", "12", "00"),
-									title: "Sync John",
-									info: "Online",
-									type: "Type03"
+									start: new Date("2017", "10", "13", "00", "00"),
+									end: new Date("2017", "10", "13", "24", "00"),
+									title: "PO.a-1164",
+									type: "Type07",
+									pic: "sap-icon://it-host"
 								},
 								{
-									start: new Date("2017", "10", "13", "11", "00"),
-									end: new Date("2017", "10", "13", "12", "00"),
-									title: "Prep for planning",
-									info: "room 5",
-									type: "Type01",
-									pic: "sap-icon://family-care"
+									start: new Date("2017", "10", "13", "00", "00"),
+									end: new Date("2017", "10", "13", "24", "00"),
+									title: "PO-1167",
+									type: "Type07",
+									pic: "sap-icon://it-host"
 								},
 								{
-									start: new Date("2017", "10", "13", "18", "00"),
-									end: new Date("2017", "10", "13", "20", "00"),
-									title: "Check Flights",
-									info: "no room",
-									type: "Type09",
-									pic: "sap-icon://flight"
+									start: new Date("2017", "10", "14", "00", "00"),
+									end: new Date("2017", "10", "14", "24", "00"),
+									title: "PO-1166",
+									type: "Type07",
+									pic: "sap-icon://it-host"
 								},
 								{
-									start: new Date("2017", "10", "13", "18", "00"),
-									end: new Date("2017", "10", "13", "20", "00"),
-									title: "Discussion of the plan",
-									info: "Online meeting",
-									type: "Type04"
+									start: new Date("2017", "10", "14", "00", "00"),
+									end: new Date("2017", "10", "14", "24", "00"),
+									title: "PO-1188",
+									type: "Type07",
+									pic: "sap-icon://it-host"
 								},
 								{
-									start: new Date("2017", "10", "20", "01", "00"),
-									end: new Date("2017", "10", "20", "23", "00"),
-									title: "Planning",
-									type: "Type09"
+									start: new Date("2017", "10", "14", "00", "00"),
+									end: new Date("2017", "10", "14", "24", "00"),
+									title: "PO-1189",
+									type: "Type07",
+									pic: "sap-icon://it-host"
 								},
 								{
-									start: new Date("2018", "2", "20", "01", "00"),
-									end: new Date("2018", "2", "20", "23", "00"),
-									title: "Off",
-									type: "Type08"
+									start: new Date("2017", "10", "15", "00", "00"),
+									end: new Date("2017", "10", "15", "24", "00"),
+									title: "PO-1191",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "15", "00", "00"),
+									end: new Date("2017", "10", "15", "24", "00"),
+									title: "PO-1192",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "17", "00", "00"),
+									end: new Date("2017", "10", "17", "24", "00"),
+									title: "PO-1194",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "17", "00", "00"),
+									end: new Date("2017", "10", "17", "24", "00"),
+									title: "PO-1165",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "18", "00", "00"),
+									end: new Date("2017", "10", "18", "24", "00"),
+									title: "PO-1197",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "18", "00", "00"),
+									end: new Date("2017", "10", "18", "24", "00"),
+									title: "PO-1196",
+									type: "Type07",
+									pic: "sap-icon://it-host"
 								}
+								
+							]
+						},
+						{
+							pic: "https://viapais.cdncimeco.com/media/cache/resolve/vertical_small/https://viapais.com.ar/files/2019/07/20190704144109_38306915_0_body.jpg",
+							name: "Carcamo Antonio",
+							role: "CUADRILLA7",
+							appointments: [
+								{
+									start: new Date("2017", "10", "15", "00", "00"),
+									end: new Date("2017", "10", "15", "24", "00"),
+									title: "PO-1195",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "15", "00", "00"),
+									end: new Date("2017", "10", "15", "24", "00"),
+									title: "PO.a-1164",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "16", "00", "00"),
+									end: new Date("2017", "10", "16", "24", "00"),
+									title: "PO-1167",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "16", "00", "00"),
+									end: new Date("2017", "10", "16", "24", "00"),
+									title: "PO-1166",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "16", "00", "00"),
+									end: new Date("2017", "10", "16", "24", "00"),
+									title: "PO-1188",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "16", "00", "00"),
+									end: new Date("2017", "10", "16", "24", "00"),
+									title: "PO-1189",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "16", "00", "00"),
+									end: new Date("2017", "10", "16", "24", "00"),
+									title: "PO-1191",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "24", "00", "00"),
+									end: new Date("2017", "10", "24", "24", "00"),
+									title: "PO-1192",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "24", "00", "00"),
+									end: new Date("2017", "10", "24", "24", "00"),
+									title: "PO-1194",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "24", "00", "00"),
+									end: new Date("2017", "10", "24", "24", "00"),
+									title: "PO-1165",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "24", "00", "00"),
+									end: new Date("2017", "10", "24", "24", "00"),
+									title: "PO-1197",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "25", "00", "00"),
+									end: new Date("2017", "10", "25", "24", "00"),
+									title: "PO-1196",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								}
+								
+							]
+						},
+						{
+							pic: "https://www.airnetwifi.es/wp-content/uploads/2016/08/13.jpg",
+							name: "Nieva Alejandro",
+							role: "CUADRILLA11",
+							appointments: [
+								{
+									start: new Date("2017", "10", "13", "00", "00"),
+									end: new Date("2017", "10", "13", "24", "00"),
+									title: "PO-1195",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "13", "00", "00"),
+									end: new Date("2017", "10", "13", "24", "00"),
+									title: "PO.a-1164",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "13", "00", "00"),
+									end: new Date("2017", "10", "13", "24", "00"),
+									title: "PO-1167",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "14", "00", "00"),
+									end: new Date("2017", "10", "14", "24", "00"),
+									title: "PO-1166",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "14", "00", "00"),
+									end: new Date("2017", "10", "14", "24", "00"),
+									title: "PO-1188",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "14", "00", "00"),
+									end: new Date("2017", "10", "14", "24", "00"),
+									title: "PO-1189",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "15", "00", "00"),
+									end: new Date("2017", "10", "15", "24", "00"),
+									title: "PO-1191",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "15", "00", "00"),
+									end: new Date("2017", "10", "15", "24", "00"),
+									title: "PO-1192",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "17", "00", "00"),
+									end: new Date("2017", "10", "17", "24", "00"),
+									title: "PO-1194",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "17", "00", "00"),
+									end: new Date("2017", "10", "17", "24", "00"),
+									title: "PO-1165",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "18", "00", "00"),
+									end: new Date("2017", "10", "18", "24", "00"),
+									title: "PO-1197",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								},
+								{
+									start: new Date("2017", "10", "18", "00", "00"),
+									end: new Date("2017", "10", "18", "24", "00"),
+									title: "PO-1196",
+									type: "Type07",
+									pic: "sap-icon://it-host"
+								}
+								
 							]
 						}
 					]
@@ -150,7 +387,41 @@ sap.ui.define([
 				this.getView().setModel(oModel);
 
 			},
+			handleAppointmentSelect: function (oEvent) {
+				var oAppointment = oEvent.getParameter("appointment");
+				if (oAppointment) {
+					this._handleSingleAppointment(oAppointment);
+				}
+			},
+			_handleSingleAppointment: function (oAppointment) {
+				if (oAppointment === undefined) {
+					return;
+				}
 
+				if (!oAppointment.getSelected()) {
+					this._oDetailsPopover.close();
+					return;
+				}
+
+				if (!this._oDetailsPopover) {
+					this._oDetailsPopover = Fragment.load({
+						id: "myPopoverFrag",
+						name: "com.pae.pm.ZAGENDAPOZOS.view.Details",
+						controller: this
+					}).then(function(oDialog){
+						this._oDetailsPopover = oDialog;
+						this._setDetailsDialogContent(oAppointment);
+
+					}.bind(this));
+				} else {
+					this._setDetailsDialogContent(oAppointment);
+				}
+
+			},
+			
+			onAfterRendering: function(){
+				this.byId("container-ZAGENDAPOZOS---Home--PC1-Header-ViewSwitch").setVisible(false);	
+			},
 			roles: {
 				donna: "Donna Moore",
 				manager: "manager",
@@ -161,8 +432,32 @@ sap.ui.define([
 				this.getView().getModel().refresh(true);
 			},
 
+			getUserRole: function() {
+				return "admin";
+			},
+			
+			_setDetailsDialogContent: function(oAppointment){
+				var oTextStart = Fragment.byId("myPopoverFrag", "startDate"),
+					oTextEnd = Fragment.byId("myPopoverFrag", "endDate"),
+					oAppBindingContext = oAppointment.getBindingContext(),
+					oMoreInfo = Fragment.byId("myPopoverFrag", "moreInfo"),
+					oDetailsPopover = Fragment.byId("myPopoverFrag","detailsPopover");
+
+				this._oDetailsPopover.setBindingContext(oAppBindingContext);
+				this._oDetailsPopover.openBy(oAppointment);
+
+				oTextStart.setText(this.formatDate(oAppointment.getStartDate()));
+				oTextEnd.setText(this.formatDate(oAppointment.getEndDate()));
+				oMoreInfo.setText(oAppointment.getText());
+				oDetailsPopover.setTitle(oAppointment.getTitle());
+			},
+
 			canModifyAppointments: function(sRole) {
-				return true;
+				var sUserRole = this.getUserRole();
+
+				if (sUserRole === this.roles.manager || sUserRole === this.roles.admin || sUserRole === sRole) {
+					return true;
+				}
 			},
 
 			handleAppointmentDragEnter: function(oEvent) {
@@ -276,9 +571,7 @@ sap.ui.define([
 				}
 
 				return bAppointmentOverlapped;
-			}}
-			
-			//Agregar el HandleSingleSelectAppointment
+			}
 
 		});
 
